@@ -1,6 +1,6 @@
 <template>
   <div class="text-h4 q-mb-lg">Quasar Tik Tak Toe</div>
-  <ClassPicker @class-event="handlePLayerClass" :playerClass="playerClass" />
+  <ClassPicker @class-event="definePlayers" :playerClass="playerClass" />
   <div ref="container" class="game-container row wrap justify-center">
     <CellContainer
       @round-event="handleClick"
@@ -9,14 +9,26 @@
       :index="n"
     />
   </div>
+  <FinishLayout
+    v-if="isGameOver"
+    :content="finishLayoutValue"
+    @reset-game="resetGame"
+  />
 </template>
 <script setup lang="ts">
-import { useCellLogic, usePlayerClass } from '../../hooks/titaktoe';
+import { useTikTakToe } from '../../hooks/titaktoe';
 
 import CellContainer from './CellContainer.vue';
 import ClassPicker from './ClassPicker.vue';
+import FinishLayout from './FinishLayout.vue';
 
-const { playerClass, handlePLayerClass } = usePlayerClass();
-const { container, handleClick } = useCellLogic(playerClass);
+const {
+  container,
+  finishLayoutValue,
+  isGameOver,
+  playerClass,
+  definePlayers,
+  handleClick,
+  resetGame,
+} = useTikTakToe();
 </script>
-<style lang=""></style>

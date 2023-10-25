@@ -1,4 +1,4 @@
-import { useCellLogic } from './useCellLogic';
-import { usePlayerClass } from './usePlayerClass';
+import { useTikTakToe } from './useTikTakToe';
+// import { usePlayerClass } from './usePlayerClass';
 
-export { useCellLogic, usePlayerClass };
+export { useTikTakToe };

@@ -6,8 +6,8 @@
     border: 1px solid black;
     font-size: 32px;
     &.selected {
-      border: 4px solid orange;
-      color: orange;
+      border: 4px solid $primary-color;
+      color: $primary-color;
     }
   }
 }

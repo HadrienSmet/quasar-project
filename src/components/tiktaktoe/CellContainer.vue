@@ -8,6 +8,5 @@
 <script setup lang="ts">
 defineProps({
   index: Number,
-  dynamicClass: String,
 });
 </script>
