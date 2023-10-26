@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="class-picker justify-center q-mb-xl">
+  <div class="class-picker justify-center">
     <q-btn
       flat
       dense

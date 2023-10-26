@@ -1,6 +1,9 @@
 <template>
-  <div class="text-h4 q-mb-lg">Quasar Tik Tak Toe</div>
+  <div class="text-h4">Quasar Tik Tak Toe</div>
   <ClassPicker @class-event="definePlayers" :playerClass="playerClass" />
+  <q-btn class="start-btn" v-if="currentPlayer === ''" @click="startGame"
+    >Start</q-btn
+  >
   <div ref="container" class="game-container row wrap justify-center">
     <CellContainer
       @round-event="handleClick"
@@ -24,11 +27,13 @@ import FinishLayout from './FinishLayout.vue';
 
 const {
   container,
+  currentPlayer,
   finishLayoutValue,
   isGameOver,
   playerClass,
   definePlayers,
   handleClick,
   resetGame,
+  startGame,
 } = useTikTakToe();
 </script>
